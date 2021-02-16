@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="generator" content="Hugo 0.80.0"/>
+    <title>Blogs</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- CSS only -->
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+            crossorigin="anonymous"
+    />
+
+</head>
+
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">M.S. Nematpour</a>
+            <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+            >
+
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-right">
+                    <a class="nav-link" href="https://github.com/MSNP1381/">Github</a>
+                    <a class="nav-link" href="{% static 'resume-sample.pdf' %}">Resume</a>
+                    <a class="nav-link active" href="#">Blog</a>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main role="main">
+    <div class="container">
+   <h1 class="text-center pt-3">{{ obj1.title }}</h1>
+        <br>
+        <h6 class="text-center">{{ obj1.pub_date }}</h6>
+        <br>
+   <img  class="img-fluid" src="{{ obj1.image.url }}"  alt="{{ obj1.title }}" />
+        <br>
+    <p>{{ obj1.body }}</p>
+        </div>
+</main>
+
+<footer class="text-muted py-5">
+    <div class="container" align="center">
+        <p align="center">&copy; MSNP {% now "Y" %}</p>
+    </div>
+</footer>
+
+<!-- JavaScript Bundle with Popper -->
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"
+></script>
+</body>
+</html>

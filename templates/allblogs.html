@@ -1,21 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
 {% load static %}
+<html lang="en">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="description" content=""/>
-    <meta
-            name="author"
-            content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
-    />
     <meta name="generator" content="Hugo 0.80.0"/>
-    <title>MSNP's portfolio</title>
-
-    <link
-            rel="canonical"
-            href="https://getbootstrap.com/docs/5.0/examples/album/"
-    />
+    <title>Blogs</title>
 
     <!-- Bootstrap core CSS -->
     <!-- CSS only -->
@@ -26,24 +17,6 @@
             crossorigin="anonymous"
     />
 
-
-
-
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -64,9 +37,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-right">
-                    <a class="nav-link"  href="https://github.com/MSNP1381">Github</a>
+                    <a class="nav-link" href="https://github.com/MSNP1381/">Github</a>
                     <a class="nav-link" href="{% static 'resume-sample.pdf' %}">Resume</a>
-                    <a class="nav-link " href="{% url 'all_blogs' %}">Blog</a>
+                    <a class="nav-link active" href="#">Blog</a>
 
                 </div>
             </div>
@@ -78,38 +51,33 @@
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light">Hi, I'm MSNP</h1>
-                <p class="lead text-muted">
-                    Hey My name is MSNP and I love Programming and specially Python
-                    Django is the best framework ever had
-                </p>
-                <img src="{% static 'msnp.png' %}" height="250" >
-                <br>
-                <br>
-                <p>
-                    <a href="https://t.me/msnp1" class="btn btn-primary my-2"
-                    >contact me</a>
-                </p>
-<hr>
+                <h1 class="fw-light"> Lastest Blogs : </h1>
+            <hr>
             </div>
+
         </div>
     </section>
 
 
     <div class="album py-5 bg-light">
         <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                {% for job in jobs.all %}
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <img class="card-img-top" src="{{ job.imgae.url }}" alt="{{ job.summary }}">
-                            <div class="card-body">
-                                <p class="card-text">
-                                    {{ job.summary }}
-                                </p>
+            <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-4">
+                {% for blog in blog_obj_all %}
+                    {#                   {{  blog.id }}#}
+                    <a href="{{blog.id}} ">
+                        <div class="col">
+                            <div class="card shadow-sm">
+                                <img class="card-img-top " src="{{ blog.image.url }}" alt="{{ job.title }}">
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        {{ blog.title }}
+                                    </p>
+                                </div>
+                                <small class="text-muted" align="center"
+                                       style="speak-time: none ">{{ blog.pub_date }}  </small>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 {% endfor %}
             </div>
         </div>
